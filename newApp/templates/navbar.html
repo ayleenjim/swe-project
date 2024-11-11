@@ -15,7 +15,18 @@
         <li class="nav-item">
           <a class="nav-link" href="https://www.utrgv.edu/">Website2</a>
         </li>
-        
+        {% if user.is_authenticated %}
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'logout' %}">
+            Log Out
+          </a>
+          {% else %}
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'register' %}">
+              New Account
+            </a>
+          {% endif %}
+        </li>
       </ul>
     </div>
   </div>
